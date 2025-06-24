@@ -37,6 +37,25 @@ a{
     text-decoration: none;
 }
 
+.typing-text {
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #000;
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 23ch } /* Adjust this based on your name length */
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent }
+}
+
+
 a:hover{
     color: var(--secondary-color);
 }
@@ -55,7 +74,7 @@ a:hover{
     left: 0;
     width: 100%;
     height: 100%;
-    background: #000 url(/My-Portfolio-main/image/dark-bg.webp) 50% no-repeat;
+    background: #000 url(/My-Portfolio-main/image/chat.png) 50% no-repeat;
     background-size: cover;
     filter: brightness(50%);
     -webkit-filter: brightness(50%);
@@ -366,6 +385,21 @@ a:hover{
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.typing-text {
+    font-size: clamp(1.5rem, 5vw, 3rem); /* responsive font size */
+    font-family: 'Courier New', Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 2.5s steps(30, end) forwards;
+    color: gold;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
 
 #hero {
     position: relative;
@@ -418,9 +452,10 @@ a:hover{
     background-size: contain;
     background-position: bottom;
     background-repeat: no-repeat;
-    background-image: url(/My-Portfolio-main/image/portrait.webp);
+    background-image: url(/My-Portfolio-main/image/hero2.png);
 }
 
+/* ✅ Mobile View */
 @media (max-width: 576px) {
     #hero {
         padding: 35px 0px 0px 0px;
@@ -436,21 +471,24 @@ a:hover{
         margin: 0 auto;
         border: solid 3px transparent;
         border-radius: 50%;
-        background-image: var(--primary-gradient-color), radial-gradient(circle at top left, var(--primary-color),var(--secondary-color));;
+        background-image: var(--primary-gradient-color), radial-gradient(circle at top left, var(--primary-color), var(--secondary-color));
         background-origin: border-box;
         background-clip: content-box, border-box;
     }
 
     .hero-portrait .pic {
+        position: relative;
         width: 100%;
+        height: 170px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        background-image: url(/assets/images/portrait.webp);
+        background-image: url(/My-Portfolio-main/image/hero3.jpg); /* ✅ mobile image */
     }
 
-    .hero-content{
+    .hero-content {
         margin-top: 35px;
+        text-align: center;
     }
 
     #hero .btn-showcase {
@@ -462,16 +500,23 @@ a:hover{
         letter-spacing: 1.2px;
     }
 
-    #hero .social-icons a{
+    #hero .social-icons a {
         font-size: 14px;
-        padding: 0px 5px 0px 5px;
+        padding: 0px 5px;
     }
 
-    #hero .call-to-action{
+    #hero .call-to-action {
         margin-top: 0px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #hero .call-to-action button {
+        width: 100%;
+        max-width: 250px;
     }
 }
-
 
 /*--------------------------------------------------------------
 # Things I Love Section
@@ -620,6 +665,11 @@ a:hover{
 #skills{
     padding: 100px 0px;
     min-height: 100vh;
+     background-image: url(/My-Portfolio-main/image/grid.png);
+    padding: 100px 0px 80px 0px;
+    background-image: url(/My-Portfolio-main/image/grid.png);
+    background-size: contain;
+    min-height: 100vh;
 }
 
 .skill{
@@ -653,7 +703,7 @@ a:hover{
 
 #tools{
     padding: 100px 0px 80px 0px;
-    background-image: url(/assets/images/grid.png);
+    background-image: url(/My-Portfolio-main/image/grid.png);
     background-size: contain;
     min-height: 100vh;
 }
@@ -698,7 +748,7 @@ a:hover{
 #projects{
     padding: 100px 0px 80px 0px;
     min-height: 100vh;
-    background-image: url(/assets/images/grid.png);
+    background-image: url(/My-Portfolio-main/image/grid.png);
     background-size: contain;
 }
 
@@ -815,7 +865,7 @@ a:hover{
 #testimonials {
     padding: 100px 0px;
     min-height: 100vh;
-    background-image: url(/assets/images/grid.png);
+    background-image: url(/My-Portfolio-main/image/grid.png);
     background-size: contain;
 }
 
@@ -904,7 +954,7 @@ a:hover{
 #blogs{
     padding: 100px 0px;
     min-height: 100vh;
-    background-image: url(/assets/images/grid.png);
+    background-image: url(/My-Portfolio-main/image/grid.png);
     background-size: contain;
 }
 
@@ -975,7 +1025,7 @@ a:hover{
 #contact{
     padding: 100px 0;
     min-height: 100vh;
-    background-image: url(/assets/images/grid.png);
+    background-image: url(/My-Portfolio-main/image/grid.png);
     background-size: contain;
 }
 
